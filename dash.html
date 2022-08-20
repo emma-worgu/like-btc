@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Softnio">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="@page-discription">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <title>Dashboard | meta2trader </title>
+  <link rel="stylesheet" href="css1/dashlite-63021.css">
+  <link id="skin-purple" rel="stylesheet" href="css1/theme-63021.css">
+  <link href="css1/jquery.growl.css" rel="stylesheet">
+  <script src="https://meta5trader.com/process/countries.js"></script>
+
+  <script src="chat.js" async></script>
+</head>
+
+
+<script>
+  function logout () {
+  localStorage.removeItem('token');
+
+  document.location.href = '/login.html';
+};
+
+</script>
+<body class="nk-body toastr-info npc-crypto has-sidebar has-sidebar-fat ui-clean ">
+  <div class="nk-app-root">
+    <div class="nk-main ">
+      <div class="nk-sidebar nk-sidebar-fat nk-sidebar-fixed" data-content="sidebarMenu">
+        <div class="nk-sidebar-element nk-sidebar-head">
+          <div class="nk-sidebar-brand"><a href="/dash.html"
+              class="logo-link nk-sidebar-logo"><img class="logo-light logo-img"
+                src=".https://meta5trader.com/assets/images/logo/logo.png" srcset="images/logo.png" alt="logo"><img
+                class="logo-dark logo-img" src="images/logo.png" srcset="images/logo.png" alt="logo-dark"> </a></div>
+          <div class="nk-menu-trigger mr-n2"><a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none"
+              data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a></div>
+        </div>
+        <div class="nk-sidebar-element">
+          <div class="nk-sidebar-body" data-simplebar>
+            <div class="nk-sidebar-content">
+              <div class="nk-sidebar-widget d-none d-xl-block">
+                <div class="user-account-info between-center">
+                  <div class="user-account-main">
+                    <h6 class="overline-title-alt">Fiat Balance</h6>
+                    <div class="user-balance accountBalance">0.00<small class="currency currency-btc">$</small></div>
+                    <div class="user-balance-alt investmentBal">0.00 <span class="currency currency-btc">$</span><small>
+                        (bonus)</small></div>
+                  </div><a href="#" class="btn btn-white btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
+                </div>
+              </div>
+              <div class="nk-sidebar-widget nk-sidebar-widget-full d-xl-none pt-0"><a
+                  class="nk-profile-toggle toggle-expand" data-target="sidebarProfile" href="#">
+                  <div class="user-card-wrap">
+                    <div class="user-card">
+                      <div class="user-avatar"><span></span></div>
+                      <div class="user-info"><span class="lead-text accountName">Loading...</span><span
+                          class="sub-text accountEmail">Loading...</span></div>
+                      <div class="user-action"><em class="icon ni ni-chevron-down"></em></div>
+                    </div>
+                  </div>
+                </a>
+                <div class="nk-profile-content toggle-expand-content" data-content="sidebarProfile">
+                  <div class="user-account-info between-center">
+                    <div class="user-account-main">
+                      <h6 class="overline-title-alt">Fiat Balance</h6>
+                      <div class="user-balance accountBalance">0.00 <small class="currency currency-btc">$</small></div>
+                      <div class="user-balance-alt investmentBal">0.00 <span class="currency currency-btc">$</span>
+                        <sma;;>(Bonus)</sma;;>
+                      </div>
+                    </div><a href="#" class="btn btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
+                  </div>
+                  <ul class="link-list">
+                    <li><a href="/myaccount.html"><em
+                          class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                    <li><a href="#"><em
+                          class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                  </ul>
+                  <ul class="link-list">
+                    <li><a href="#"
+                        onclick="event.preventDefault(); logout()">
+
+                        <form id="logout-form"
+                          style="display: none;">
+                        </form>
+
+                        <em class="icon ni ni-signout"></em><span>Sign out</span>
+                      </a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="nk-sidebar-menu">
+                <ul class="nk-menu">
+                  <li class="nk-menu-heading">
+                    <h6 class="overline-title">Menu</h6>
+                  </li>
+                  <li class="nk-menu-item"><a href="/dash.html" class="nk-menu-link"><span
+                        class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span><span
+                        class="nk-menu-text">Dashboard</span></a></li>
+
+
+                  <li class="nk-menu-item has-sub"><a href="#" class="nk-menu-link nk-menu-toggle"><span
+                        class="nk-menu-icon"><em class="icon ni ni-wallet"></em></span><span
+                        class="nk-menu-text">Deposit</span></a>
+                    <ul class="nk-menu-sub">
+                      <li class="nk-menu-item"><a href="/deposit.html"
+                          class="nk-menu-link"><span class="nk-menu-text">Deposit Crypto</span></a></li>
+                      <li class="nk-menu-item"><a href="#"
+                          class="nk-menu-link"><span class="nk-menu-text">Deposit Log</span></a></li>
+                    </ul>
+                  </li>
+
+
+                  <li class="nk-menu-item has-sub"><a href="#" class="nk-menu-link nk-menu-toggle"><span
+                        class="nk-menu-icon"><em class="icon ni ni-money"></em></span><span
+                        class="nk-menu-text">Withdraw</span></a>
+                    <ul class="nk-menu-sub">
+                      <li class="nk-menu-item"><a href="/withdraw.html"
+                          class="nk-menu-link"><span class="nk-menu-text">New Request</span></a></li>
+                      <li class="nk-menu-item"><a href="/withdrawal-log.html"
+                          class="nk-menu-link"><span class="nk-menu-text">Withdrawal Log</span></a></li>
+                      <li class="nk-menu-item"><a href="#" class="nk-menu-link"><span
+                            class="nk-menu-text">Convert Bonus</span></a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nk-menu-item has-sub"><a href="#" class="nk-menu-link nk-menu-toggle"><span
+                        class="nk-menu-icon"><em class="icon ni ni-tranx"></em></span><span class="nk-menu-text">Fund
+                        Transfer</span></a>
+                    <ul class="nk-menu-sub">
+                      <li class="nk-menu-item"><a href="/transfer.html"
+                          class="nk-menu-link"><span class="nk-menu-text">Transfer Fund</span></a></li>
+                      <li class="nk-menu-item"><a href="#"
+                          class="nk-menu-link"><span class="nk-menu-text">Transfer Log</span></a></li>
+                    </ul>
+                  </li>
+
+
+
+
+                  <li class="nk-menu-item"><a href="/myaccount.html" class="nk-menu-link"><span
+                        class="nk-menu-icon"><em class="icon ni ni-user-c"></em></span><span class="nk-menu-text">My
+                        Account</span></a></li>
+                  <li class="nk-menu-item"><a href="#" class="nk-menu-link"><span
+                        class="nk-menu-icon"><em class="icon ni ni-shield"></em></span><span
+                        class="nk-menu-text">Account Verification</span></a></li>
+                  <li class="nk-menu-item"><a href="/referral.html"
+                      class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-network"></em></span><span
+                        class="nk-menu-text">Referral System</span></a></li>
+                  <li class="nk-menu-item"><a href="#"
+                      class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-calendar"></em></span><span
+                        class="nk-menu-text">Activities Log</span></a></li>
+                  <li class="nk-menu-heading">
+                    <h6 class="overline-title">Message Center</h6>
+                  </li>
+                  <li class="nk-menu-item has-sub"><a href="#"
+                      class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-emails"></em></span><span
+                        class="nk-menu-text">Message Inbox</span></a></li>
+                  <li class="nk-menu-item has-sub"><a href="#"
+                      class="nk-menu-link"><span class="nk-menu-icon"><em
+                          class="icon ni ni-headphone-fill"></em></span><span class="nk-menu-text">Support
+                        Ticket</span></a></li>
+
+                  <li class="nk-menu-item"><a href="#"
+                      class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-happy"></em></span><span
+                        class="nk-menu-text">Testimonials</span></a></li>
+                  <li class="nk-menu-item"><a href="#" class=" nk-menu-link"><span
+                        class="nk-menu-icon"><em class="icon ni ni-help"></em></span><span
+                        class="nk-menu-text">FAQ</span></a></li>
+                </ul>
+              </div>
+
+              <div class="nk-sidebar-footer">
+                <ul class="nk-menu nk-menu-footer">
+                  <li class="nk-menu-item"><a href="#" class="nk-menu-link"><span class="nk-menu-icon"><em
+                          class="icon ni ni-help-alt"></em></span><span class="nk-menu-text">Support</span></a></li>
+                  <li class="nk-menu-item ml-auto">
+                    <div class="dropup"><a href="#" class="nk-menu-link dropdown-indicator has-indicator"
+                        data-toggle="dropdown" data-offset="0,10"><span class="nk-menu-icon"><em
+                            class="icon ni ni-globe"></em></span><span class="nk-menu-text">English</span></a>
+                      <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                        <ul class="language-list">
+                          <li><a href="#" class="language-item"><img src="images/english.png" alt
+                                class="language-flag"><span class="language-name">English</span></a></li>
+                          <li><a href="#" class="language-item"><img src="images/spanish.png" alt
+                                class="language-flag"><span class="language-name">Español</span></a></li>
+                          <li><a href="#" class="language-item"><img src="images/french.png" alt
+                                class="language-flag"><span class="language-name">Français</span></a></li>
+                          <li><a href="#" class="language-item"><img src="images/turkey.png" alt
+                                class="language-flag"><span class="language-name">Türkçe</span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nk-wrap ">
+        <div class="nk-header nk-header-fluid nk-header-fixed is-light">
+          <div class="container-fluid">
+            <div class="nk-header-wrap">
+              <div class="nk-menu-trigger d-xl-none ml-n1"><a href="#" class="nk-nav-toggle nk-quick-nav-icon"
+                  data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a></div>
+              <div class="nk-header-brand d-xl-none"><a href="/dash.html" class="logo-link"><img
+                    class="logo-light logo-img" src="images/logo.png" srcset="images/logo.png" alt="logo"><img
+                    class="logo-dark logo-img" src="images/logo.png" srcset="images/logo.png" alt="logo-dark"> </a>
+              </div>
+              <div class="nk-header-news d-none d-xl-block">
+                <div class="nk-news-list"><a class="nk-news-item" href="#">
+                    <div class="nk-news-icon"><em class="icon ni ni-card-view"></em></div>
+                    <div class="nk-news-text">
+                      <p>Do you know you can create you personal blockchain wallet? <span> You wallet is a step
+                          away!!</span></p><em class="icon ni ni-external"></em>
+                    </div>
+                  </a></div>
+              </div>
+              <div class="nk-header-tools">
+                <ul class="nk-quick-nav">
+                  <li class="dropdown user-dropdown"><a href="/dash.html" class="dropdown-toggle" data-toggle="dropdown">
+                      <div class="user-toggle">
+                        <div class="user-avatar sm">
+                          <img src=" https://meta5trader.com/assets/user/images/user-default.png " width="100"
+                            alt="Profile Pic">
+                        </div>
+                        <div class="user-info d-none d-md-block">
+                          <div class="user-status user-status-unverified">Good afternoon</div>
+                          <div class="user-name dropdown-indicator accountName">Loading...</div>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right dropdown-menu-s1">
+                      <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                        <div class="user-card">
+
+
+                          <div class="user-avatar"><span></span></div>
+                          <div class="user-info">
+                            <span class="lead-text accountName">Loading...</span>
+                            <span class="sub-text accountEmail">Loading...</span></div>
+                        </div>
+                      </div>
+                      <div class="dropdown-inner user-account-info">
+                        <h6 class="overline-title-alt">Fiat Account</h6>
+                        <div class="user-balance accountBalance">0.00 <small class="currency currency-btc">$</small></div>
+                        <div class="user-balance-sub">Bonus <span>0.00 <span
+                              class="currency currency-btc">$</span></span></div>
+                      </div>
+                      <div class="dropdown-inner">
+                        <ul class="link-list">
+                          <li><a href="/myaccount.html"><em
+                                class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                          <li><a href="#"><em
+                                class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                        </ul>
+                      </div>
+                      <div class="dropdown-inner">
+                        <ul class="link-list">
+                          <li><a href="#"
+                              onclick="event.preventDefault(); logout()"><em
+                                class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown notification-dropdown mr-n1"><a href="#" class="dropdown-toggle nk-quick-nav-icon"
+                      data-toggle="dropdown">
+
+                      <div class="icon-status icon-status-info"><em class="icon ni ni-bell"></em></div>
+
+
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right dropdown-menu-s1">
+                      <div class="dropdown-head"><span class="sub-title nk-dropdown-title">Notifications</span> </div>
+                      <div class="dropdown-body">
+                        <div class="nk-notification">
+
+                        </div>
+                      </div>
+                      <div class="dropdown-foot center"><a href="#">View All</a></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="nk-content nk-content-fluid">
+
+
+
+
+          <div class="container-xl wide-lg">
+
+
+
+
+
+
+            <!-- <div class="alert alert-danger">
+              <div class="alert-cta flex-wrap flex-md-nowrap">
+                <div class="alert-text">
+                  <p>Hello emma-56!, You have <a href="#" class="link link-primary"> 0
+                      unread message(s).</a></p>
+                </div>
+                <ul class="alert-actions gx-3 mt-3 mb-1 my-md-0">
+                  <li class="order-md-last"><a href="#" class="btn btn-sm btn-warning" type="button"
+                      data-dismiss="alert" aria-label="Close">Close</a></li>
+
+                </ul>
+
+              </div>
+            </div> -->
+
+
+
+            <div class="nk-block-head nk-block-head-sm">
+              <div class="nk-block-between">
+                <div class="nk-block-head-content">
+                  <h3 class="nk-block-title page-title">Dashboard</h3>
+
+                  <div class="nk-block-des text-soft">
+                    <p>Good afternoon, </p>
+                  </div>
+                </div>
+                <div class="nk-block-head-content">
+                  <div class="toggle-wrap nk-block-tools-toggle">
+                    <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em
+                        class="icon ni ni-more-v"></em></a>
+                    <div class="toggle-expand-content" data-content="pageMenu">
+                      <ul class="nk-block-tools g-3">
+                        <li>
+                          <a href="#" data-toggle="modal" data-target="#modalbonus"
+                            class="btn btn-white btn-dim btn-outline-primary"><em
+                              class="icon ni ni-gift"></em><span>Earn Bonus</span></a>
+                        </li>
+
+                        <li class="nk-block-tools-opt">
+
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="nk-content-body">
+              <br>
+              <div class="nk-block">
+                <div class="row gy-gs">
+                  <div class="col-lg-5 col-xl-4">
+                    <div class="nk-block">
+                      <div class="nk-block-head-xs">
+                        <div class="nk-block-head-content">
+                          <h5 class="nk-block-title title">Fiat Summary</h5>
+                        </div>
+                      </div>
+                      <div class="nk-block">
+                        <div class="card card-bordered text-light is-dark h-100">
+                          <div class="card-inner">
+                            <div class="nk-wg7">
+                              <div class="nk-wg7-stats">
+                                <div class="nk-wg7-title">Available balance in $</div>
+                                <div class="number-lg amount accountBalance">$ 0.00</div>
+                              </div>
+                              <div class="nk-wg7-stats-group">
+                                <div class="nk-wg7-stats w-50">
+                                  <div class="nk-wg7-title">Investment</div>
+                                  <div class="number">$ 0.00 </div>
+                                </div>
+                                <div class="nk-wg7-stats w-50">
+                                  <div class="nk-wg7-title">Profit</div>
+                                  <div class="number accountBalance">$ 0.00 </div>
+                                </div>
+                              </div>
+                              <div class="nk-wg7-foot">
+                                <span class="nk-wg7-note">Last deposit at: <span> None Deposit Yet </span></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-7 col-xl-8">
+                    <div class="nk-block">
+                      <div class="nk-block-head-xs">
+                        <div class="nk-block-between-md g-2">
+                          <div class="nk-block-head-content">
+                            <h6 class="nk-block-title title">Sales Summary</h6>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="row g-2">
+                        <div class="col-sm-4 col-6">
+                          <div class="card bg-primary-dim">
+                            <div class="nk-wgw sm">
+                              <a class="nk-wgw-inner" href="#">
+                                <div class="nk-wgw-name">
+                                  <div class="nk-wgw-icon"><em class="icon ni ni-coins"></em></div>
+                                  <h5 class="nk-wgw-title title">Total Sales</h5>
+                                </div>
+                                <div class="nk-wgw-balance">
+                                  <div class="amount"><span class="currency currency-nio">$</span> 0.00 </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-6">
+                          <div class="card bg-warning-dim">
+                            <div class="nk-wgw sm">
+                              <a class="nk-wgw-inner" href="#">
+                                <div class="nk-wgw-name">
+                                  <div class="nk-wgw-icon"><em class="icon ni ni-alert-circle"></em></div>
+                                  <h5 class="nk-wgw-title title">Pending Sales</h5>
+                                </div>
+                                <div class="nk-wgw-balance">
+                                  <div class="amount"><span class="currency currency-nio">$</span> 0.00 </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-12">
+                          <div class="card bg-danger-dim">
+                            <div class="nk-wgw sm">
+                              <a class="nk-wgw-inner" href="#/crypto/wallet-bitcoin.html">
+                                <div class="nk-wgw-name">
+                                  <div class="nk-wgw-icon"><em class="icon ni ni-trash"></em></div>
+                                  <h5 class="nk-wgw-title title">Declined Sales</h5>
+                                </div>
+                                <div class="nk-wgw-balance">
+                                  <div class="amount"><span class="currency currency-nio">$</span> 0.00 </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="nk-block nk-block-md">
+                      <div class="nk-block-head-xs">
+                        <div class="nk-block-between-md g-2">
+                          <div class="nk-block-head-content">
+                            <h6 class="nk-block-title title">Purchase Summary </h6>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="row g-2">
+                        <div class="col-sm-4 col-6">
+                          <div class="card bg-primary-dim">
+                            <div class="nk-wgw sm">
+                              <a class="nk-wgw-inner" href="#crypto/wallet-bitcoin.html">
+                                <div class="nk-wgw-name">
+                                  <div class="nk-wgw-icon"><em class="icon ni ni-cart"></em></div>
+                                  <h5 class="nk-wgw-title title">Total Purchase</h5>
+                                </div>
+                                <div class="nk-wgw-balance">
+                                  <div class="amount"><span class="currency currency-nio">$</span> 0.00 </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-6">
+                          <div class="card bg-warning-dim">
+                            <div class="nk-wgw sm">
+                              <a class="nk-wgw-inner" href="#">
+                                <div class="nk-wgw-name">
+                                  <div class="nk-wgw-icon"><em class="icon ni ni-alert-circle"></em></div>
+                                  <h5 class="nk-wgw-title title">Pending Purchase</h5>
+                                </div>
+                                <div class="nk-wgw-balance">
+                                  <div class="amount"><span class="currency currency-nio">$</span> 0.00 </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4 col-12">
+                          <div class="card bg-danger-dim">
+                            <div class="nk-wgw sm">
+                              <a class="nk-wgw-inner" href="#/crypto/wallet-bitcoin.html">
+                                <div class="nk-wgw-name">
+                                  <div class="nk-wgw-icon"><em class="icon ni ni-trash"></em></div>
+                                  <h5 class="nk-wgw-title title">Declined Purchase</h5>
+                                </div>
+                                <div class="nk-wgw-balance">
+                                  <div class="amount"><span class="currency currency-nio">$</span> 0.00 </div>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br><br>
+              <div class="nk-block-head-content">
+                <h6 class="nk-block-title title">Unprocessed Trade </h6>
+              </div><br>
+
+              <div class="card-inner p-0 border-top">
+                <div class="nk-tb-list nk-tb-orders">
+                  <div class="nk-tb-item nk-tb-head">
+                    <div class="nk-tb-col"><span>Order No.</span></div>
+
+                    <div class="nk-tb-col tb-col-md"><span>Date</span></div>
+                    <div class="nk-tb-col tb-col-lg"><span>Currency</span></div>
+                    <div class="nk-tb-col"><span>Amount/Crypto</span></div>
+                    <div class="nk-tb-col"> Type </div>
+                    <div class="nk-tb-col"><span>&nbsp;</span></div>
+                  </div>
+
+                  <center>
+                    <div class="card-inner-sm border-top text-center d-sm"><a href="#" class="btn btn-link btn-block">No
+                        Pending Trade</a></div>
+                  </center>
+                  <br>
+                  <center>
+                  </center>
+
+
+
+                </div>
+              </div>
+
+            </div>
+            <br><br>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container" style="overflow: auto;">
+              <div id="tradingview_1aef6"></div>
+              <div class="tradingview-widget-copyright"><a
+                  href="https://www.tradingview.com/symbols/BTCUSD/?exchange=COINBASE" rel="noopener"
+                  target="_blank"><span class="blue-text">BTCUSD Chart</span></a> by TradingView</div>
+              <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+              <script type="text/javascript">
+                new TradingView.widget(
+                  {
+                    "width": 970,
+                    "height": 610,
+                    "symbol": "COINBASE:BTCUSD",
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": "light",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "allow_symbol_change": true,
+                    "container_id": "tradingview_1aef6"
+                  }
+                );
+              </script>
+            </div>
+            <!-- TradingView Widget END -->
+            <br><br>
+            <div class="nk-block">
+              <div class="card card-bordered">
+                <div class="nk-refwg">
+                  <div class="nk-refwg-invite card-inner">
+                    <div class="nk-refwg-head g-3">
+                      <div class="nk-refwg-title">
+                        <h5 class="title">Refer Us & Earn</h5>
+                        <div class="title-sub">Use the bellow link to invite your friends.</div>
+                      </div>
+                      <div class="nk-refwg-action"><a
+                          href="http://www.facebook.com/share.php?u=https://meta5trader.com/register/emma-56&amp;title= Referral Link"
+                          class="btn btn-primary">Invite</a></div>
+                    </div>
+                    <div class="nk-refwg-url">
+                      <div class="form-control-wrap">
+                        <div class="form-clip clipboard-init" data-clipboard-target="#refUrl" data-success="Copied"
+                          data-text="Copy Link">
+                          <em class="clipboard-icon icon ni ni-copy"></em> <span class="clipboard-text">Copy Link</span>
+                        </div>
+                        <div class="form-icon"><em class="icon ni ni-link-alt"></em></div>
+                        <input type="text" class="form-control copy-text" id="refUrl"
+                          value="Loading..." readonly>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nk-refwg-stats card-inner bg-lighter">
+                    <div class="nk-refwg-group g-3">
+                      <div class="nk-refwg-name">
+                        <div class="nk-refwg-ck"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90">
+                            <rect x="3.5" y="14" width="36" height="62" rx="2" ry="2" fill="#fff" stroke="#6576ff"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            <line x1="3.5" y1="22" x2="39.5" y2="22" fill="none" stroke="#6576ff" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="2" />
+                            <line x1="3.5" y1="64" x2="39.5" y2="64" fill="none" stroke="#6576ff" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="2" />
+                            <line x1="20.5" y1="18" x2="25.5" y2="18" fill="none" stroke="#c4cefe"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            <line x1="17.17" y1="18" x2="17.17" y2="18" fill="none" stroke="#c4cefe"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            <circle cx="21.5" cy="70" r="2" fill="none" stroke="#6576ff" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="2" />
+                            <rect x="7.5" y="25" width="28" height="35" fill="#eff1ff" />
+                            <rect x="10.5" y="40" width="4" height="6" rx="2" ry="2" fill="#c4cefe" />
+                            <rect x="16.5" y="40" width="4" height="6" rx="2" ry="2" fill="#c4cefe" />
+                            <rect x="22.5" y="40" width="4" height="6" rx="2" ry="2" fill="#c4cefe" />
+                            <rect x="28.5" y="40" width="4" height="6" rx="2" ry="2" fill="#c4cefe" />
+                            <rect x="50.5" y="14" width="36" height="62" rx="2" ry="2" fill="#fff" stroke="#6576ff"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            <line x1="50.5" y1="22" x2="86.5" y2="22" fill="none" stroke="#6576ff"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            <line x1="50.5" y1="64" x2="86.5" y2="64" fill="none" stroke="#6576ff"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            <line x1="67.5" y1="18" x2="72.5" y2="18" fill="none" stroke="#c4cefe"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            <line x1="64.45" y1="17.86" x2="64.45" y2="17.86" fill="none" stroke="#c4cefe"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            <circle cx="68.5" cy="70" r="2" fill="none" stroke="#6576ff" stroke-linecap="round"
+                              stroke-linejoin="round" stroke-width="2" />
+                            <rect x="54.5" y="25" width="28" height="35" fill="#eff1ff" />
+                            <rect x="57.5" y="39" width="4" height="6" rx="2" ry="2" fill="#c4cefe" />
+                            <rect x="63.5" y="39" width="4" height="6" rx="2" ry="2" fill="#c4cefe" />
+                            <rect x="69.5" y="39" width="4" height="6" rx="2" ry="2" fill="#c4cefe" />
+                            <rect x="75.5" y="39" width="4" height="6" rx="2" ry="2" fill="#c4cefe" />
+                            <ellipse cx="45.51" cy="44" rx="15.18" ry="15" fill="#fff" stroke="#6576ff"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                            <ellipse cx="45.51" cy="44" rx="11.13" ry="11" fill="#e3e7fe" />
+                            <path
+                              d="M46,50.92s5.5-2.77,5.5-6.92V39.16L46,37.08l-5.5,2.08V44C40.5,48.15,46,50.92,46,50.92Z"
+                              fill="#6576ff" />
+                            <polyline points="48.04 42 44.56 46 42.98 44.18" fill="none" stroke="#fff"
+                              stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                          </svg></div>
+                      </div>
+                      <div class="nk-refwg-info g-3">
+                        <div class="nk-refwg-sub">
+                          <div class="title">0</div>
+                          <div class="sub-text">Total Referred</div>
+                        </div>
+                        <div class="nk-refwg-sub">
+                          <div class="title"> None </div>
+                          <div class="sub-text">Last Referred</div>
+                        </div>
+                      </div>
+                      <div class="nk-refwg-more dropdown mt-n1 mr-n1">
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="nk-block">
+              <div class="card card-bordered">
+                <div class="card-inner card-inner-lg">
+                  <div class="align-center flex-wrap flex-md-nowrap g-4">
+                    <div
+                      style="height:433px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F; padding: 0px; margin: 0px; width: 100%;">
+                      <div style="height:413px; padding:0px; margin:0px; width: 100%;"><iframe src="widget.html"
+                          width="100%" height="409px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
+                          border="0" style="border:0;margin:0;padding:0;"></iframe></div>
+                      <div
+                        style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
+                        <a href="https://coinlib.io" target="_blank"
+                          style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Cryptocurrency
+                          Prices</a>&nbsp;by Coinlib</div>
+                    </div>
+                    <div class="nk-block-image w-120px flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 118">
+                        <path
+                          d="M8.916,94.745C-.318,79.153-2.164,58.569,2.382,40.578,7.155,21.69,19.045,9.451,35.162,4.32,46.609.676,58.716.331,70.456,1.845,84.683,3.68,99.57,8.694,108.892,21.408c10.03,13.679,12.071,34.71,10.747,52.054-1.173,15.359-7.441,27.489-19.231,34.494-10.689,6.351-22.92,8.733-34.715,10.331-16.181,2.192-34.195-.336-47.6-12.281A47.243,47.243,0,0,1,8.916,94.745Z"
+                          transform="translate(0 -1)" fill="#f6faff" />
+                        <rect x="18" y="32" width="84" height="50" rx="4" ry="4" fill="#fff" />
+                        <rect x="26" y="44" width="20" height="12" rx="1" ry="1" fill="#e5effe" />
+                        <rect x="50" y="44" width="20" height="12" rx="1" ry="1" fill="#e5effe" />
+                        <rect x="74" y="44" width="20" height="12" rx="1" ry="1" fill="#e5effe" />
+                        <rect x="38" y="60" width="20" height="12" rx="1" ry="1" fill="#e5effe" />
+                        <rect x="62" y="60" width="20" height="12" rx="1" ry="1" fill="#e5effe" />
+                        <path
+                          d="M98,32H22a5.006,5.006,0,0,0-5,5V79a5.006,5.006,0,0,0,5,5H52v8H45a2,2,0,0,0-2,2v4a2,2,0,0,0,2,2H73a2,2,0,0,0,2-2V94a2,2,0,0,0-2-2H66V84H98a5.006,5.006,0,0,0,5-5V37A5.006,5.006,0,0,0,98,32ZM73,94v4H45V94Zm-9-2H54V84H64Zm37-13a3,3,0,0,1-3,3H22a3,3,0,0,1-3-3V37a3,3,0,0,1,3-3H98a3,3,0,0,1,3,3Z"
+                          transform="translate(0 -1)" fill="#798bff" />
+                        <path
+                          d="M61.444,41H40.111L33,48.143V19.7A3.632,3.632,0,0,1,36.556,16H61.444A3.632,3.632,0,0,1,65,19.7V37.3A3.632,3.632,0,0,1,61.444,41Z"
+                          transform="translate(0 -1)" fill="#6576ff" />
+                        <path
+                          d="M61.444,41H40.111L33,48.143V19.7A3.632,3.632,0,0,1,36.556,16H61.444A3.632,3.632,0,0,1,65,19.7V37.3A3.632,3.632,0,0,1,61.444,41Z"
+                          transform="translate(0 -1)" fill="none" stroke="#6576ff" stroke-miterlimit="10"
+                          stroke-width="2" />
+                        <line x1="40" y1="22" x2="57" y2="22" fill="none" stroke="#fffffe" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="2" />
+                        <line x1="40" y1="27" x2="57" y2="27" fill="none" stroke="#fffffe" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="2" />
+                        <line x1="40" y1="32" x2="50" y2="32" fill="none" stroke="#fffffe" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="2" />
+                        <line x1="30.5" y1="87.5" x2="30.5" y2="91.5" fill="none" stroke="#9cabff"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <line x1="28.5" y1="89.5" x2="32.5" y2="89.5" fill="none" stroke="#9cabff"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <line x1="79.5" y1="22.5" x2="79.5" y2="26.5" fill="none" stroke="#9cabff"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <line x1="77.5" y1="24.5" x2="81.5" y2="24.5" fill="none" stroke="#9cabff"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="90.5" cy="97.5" r="3" fill="none" stroke="#9cabff" stroke-miterlimit="10" />
+                        <circle cx="24" cy="23" r="2.5" fill="none" stroke="#9cabff" stroke-miterlimit="10" />
+                      </svg>
+                    </div>
+
+                    <div class="nk-block-content">
+                      <div class="nk-block-content-head px-lg-4">
+                        <h5>We’re here to help you!</h5>
+                        <p class="text-soft">Ask a question or file a support ticket, manage request, report an issues.
+                          Our team support team will get back to you by email.</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="modal fade" tabindex="-1" id="modalbonus">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross"></em></a>
+            <div class="modal-body modal-body-lg text-center">
+              <div class="nk-modal">
+                <em class="nk-modal-icon icon icon-circle icon-circle-xxl ni ni-check bg-success"></em>
+                <h4 class="nk-modal-title">Congratulations!</h4>
+                <div class="nk-modal-text">
+                  <div class="caption-text">Its a new day to earn your daily bonus. Please click the button below to
+                    earn your <strong>$12</strong> bonus for the day</div>
+
+                </div>
+                <div class="nk-modal-action">
+                  <a href="#" class="btn btn-lg btn-mw btn-primary">Earn
+                    Bonus</a>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer bg-lighter">
+              <div class="text-center w-100">
+                <p>Earn upto $5 for each friend your refer! <a href="#">Invite friends</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nk-footer nk-footer-fluid">
+        <div class="container-fluid">
+          <div class="nk-footer-wrap">
+            <div class="nk-footer-copyright"> &copy; 2021 meta2trader </div>
+            <div class="nk-footer-links">
+              <ul class="nav nav-sm">
+                <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer="true" src="data.js"></script>
+  <script src="https://meta5trader.com/backend/js/bundle.js?ver=1.6.1"></script>
+  <script src="https://meta5trader.com/backend/js/scripts.js?ver=1.6.1"></script>
+  <script src="https://meta5trader.com/backend/js/demo-settings.js?ver=1.6.1"></script>
+  <script src="https://meta5trader.com/backend/js/charts/chart-crypto.js?ver=1.6.1"></script>
+
+
+
+
+  <script src="https://meta5trader.com/frontend/js/rainbow.js"></script>
+  <script src="https://meta5trader.com/frontend/js/sample.js"></script>
+  <script src="https://meta5trader.com/frontend/js/jquery.growl.js"></script>
+
+
+</body>
+
+</html>
+
+<!-- Localized -->

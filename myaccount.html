@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Softnio">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="@page-discription">
+  <link rel="shortcut icon" href="images/favicon.png">
+  <title>Profile | meta2trader </title>
+  <link rel="stylesheet" href="css1/dashlite-63021.css">
+  <link id="skin-purple" rel="stylesheet" href="css1/theme-63021.css">
+  <link href="css1/jquery.growl.css" rel="stylesheet">
+  <script src="js/countries.js"></script>
+  <script async src="js_1"></script>
+  <script src="chat.js" async></script>
+</head>
+
+<script>
+  function logout () {
+  localStorage.removeItem('token');
+
+  document.location.href = '/login.html';
+};
+
+</script>
+
+<body class="nk-body toastr-info npc-crypto has-sidebar has-sidebar-fat ui-clean ">
+  <div class="nk-app-root">
+    <div class="nk-main ">
+      <div class="nk-sidebar nk-sidebar-fat nk-sidebar-fixed" data-content="sidebarMenu">
+        <div class="nk-sidebar-element nk-sidebar-head">
+          <div class="nk-sidebar-brand"><a href="/dash.html"
+              class="logo-link nk-sidebar-logo"><img class="logo-light logo-img"
+                src=".https://meta5trader.com/assets/images/logo/logo.png" srcset="images/logo.png" alt="logo"><img
+                class="logo-dark logo-img" src="images/logo.png" srcset="images/logo.png" alt="logo-dark"> </a></div>
+          <div class="nk-menu-trigger mr-n2"><a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none"
+              data-target="sidebarMenu"><em class="icon ni ni-arrow-left"></em></a></div>
+        </div>
+        <div class="nk-sidebar-element">
+          <div class="nk-sidebar-body" data-simplebar>
+            <div class="nk-sidebar-content">
+              <div class="nk-sidebar-widget d-none d-xl-block">
+                <div class="user-account-info between-center">
+                  <div class="user-account-main">
+                    <h6 class="overline-title-alt">Fiat Balance</h6>
+                    <div class="user-balance accountBalance">0.00 <small class="currency currency-btc">$</small></div>
+                    <div class="user-balance-alt investmentBal">0.00 <span class="currency currency-btc">$</span><small>
+                        (bonus)</small></div>
+                  </div><a href="#" class="btn btn-white btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
+                </div>
+              </div>
+              <div class="nk-sidebar-widget nk-sidebar-widget-full d-xl-none pt-0"><a
+                  class="nk-profile-toggle toggle-expand" data-target="sidebarProfile" href="#">
+                  <div class="user-card-wrap">
+                    <div class="user-card">
+                      <div class="user-avatar"><span></span></div>
+                      <div class="user-info"><span class="lead-text accountName">Loading...</span><span
+                          class="sub-text accountEmail">Loading...</span></div>
+                      <div class="user-action"><em class="icon ni ni-chevron-down"></em></div>
+                    </div>
+                  </div>
+                </a>
+                <div class="nk-profile-content toggle-expand-content" data-content="sidebarProfile">
+                  <div class="user-account-info between-center">
+                    <div class="user-account-main">
+                      <h6 class="overline-title-alt">Fiat Balance</h6>
+                      <div class="user-balance accountBalance">0.00 <small class="currency currency-btc">$</small></div>
+                      <div class="user-balance-alt investmentBal">0.00 <span class="currency currency-btc">$</span>
+                        <sma;;>(Bonus)</sma;;>
+                      </div>
+                    </div><a href="#" class="btn btn-icon btn-light"><em class="icon ni ni-line-chart"></em></a>
+                  </div>
+                  <ul class="link-list">
+                    <li><a href="/myaccount.html"><em
+                          class="icon ni ni-user-alt"></em><span>View Profile</span></a></li>
+                    <li><a href="#"><em
+                          class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                  </ul>
+                  <ul class="link-list">
+                    <li><a href="#"
+                        onclick="event.preventDefault(); logout();">
+
+                        <form id="logout-form"
+                          style="display: none;"></form>
+
+                        <em class="icon ni ni-signout"></em><span>Sign out</span>
+                      </a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="nk-sidebar-menu">
+                <ul class="nk-menu">
+                  <li class="nk-menu-heading">
+                    <h6 class="overline-title">Menu</h6>
+                  </li>
+                  <li class="nk-menu-item"><a href="/dash.html" class="nk-menu-link"><span
+                        class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span><span
+                        class="nk-menu-text">Dashboard</span></a></li>
+
+
+                  <li class="nk-menu-item has-sub"><a href="#" class="nk-menu-link nk-menu-toggle"><span
+                        class="nk-menu-icon"><em class="icon ni ni-wallet"></em></span><span
+                        class="nk-menu-text">Deposit</span></a>
+                    <ul class="nk-menu-sub">
+                      <li class="nk-menu-item"><a href="/deposit.html"
+                          class="nk-menu-link"><span class="nk-menu-text">Deposit Crypto</span></a></li>
+                      <li class="nk-menu-item"><a href="#"
+                          class="nk-menu-link"><span class="nk-menu-text">Deposit Log</span></a></li>
+                    </ul>
+                  </li>
+
+
+                  <li class="nk-menu-item has-sub"><a href="#" class="nk-menu-link nk-menu-toggle"><span
+                        class="nk-menu-icon"><em class="icon ni ni-money"></em></span><span
+                        class="nk-menu-text">Withdraw</span></a>
+                    <ul class="nk-menu-sub">
+                      <li class="nk-menu-item"><a href="/withdraw.html"
+                          class="nk-menu-link"><span class="nk-menu-text">New Request</span></a></li>
+                      <li class="nk-menu-item"><a href="/withdrawal-log.html"
+                          class="nk-menu-link"><span class="nk-menu-text">Withdrawal Log</span></a></li>
+                      <li class="nk-menu-item"><a href="#" class="nk-menu-link"><span
+                            class="nk-menu-text">Convert Bonus</span></a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nk-menu-item has-sub"><a href="#" class="nk-menu-link nk-menu-toggle"><span
+                        class="nk-menu-icon"><em class="icon ni ni-tranx"></em></span><span class="nk-menu-text">Fund
+                        Transfer</span></a>
+                    <ul class="nk-menu-sub">
+                      <li class="nk-menu-item"><a href="/transfer.html"
+                          class="nk-menu-link"><span class="nk-menu-text">Transfer Fund</span></a></li>
+                      <li class="nk-menu-item"><a href="#"
+                          class="nk-menu-link"><span class="nk-menu-text">Transfer Log</span></a></li>
+                    </ul>
+                  </li>
+
+
+
+
+                  <li class="nk-menu-item"><a href="/myaccount.html" class="nk-menu-link"><span
+                        class="nk-menu-icon"><em class="icon ni ni-user-c"></em></span><span class="nk-menu-text">My
+                        Account</span></a></li>
+                  <li class="nk-menu-item"><a href="#" class="nk-menu-link"><span
+                        class="nk-menu-icon"><em class="icon ni ni-shield"></em></span><span
+                        class="nk-menu-text">Account Verification</span></a></li>
+                  <li class="nk-menu-item"><a href="/referral.html"
+                      class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-network"></em></span><span
+                        class="nk-menu-text">Referral System</span></a></li>
+                  <li class="nk-menu-item"><a href="#"
+                      class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-calendar"></em></span><span
+                        class="nk-menu-text">Activities Log</span></a></li>
+                  <li class="nk-menu-heading">
+                    <h6 class="overline-title">Message Center</h6>
+                  </li>
+                  <li class="nk-menu-item has-sub"><a href="#"
+                      class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-emails"></em></span><span
+                        class="nk-menu-text">Message Inbox</span></a></li>
+                  <li class="nk-menu-item has-sub"><a href="#"
+                      class="nk-menu-link"><span class="nk-menu-icon"><em
+                          class="icon ni ni-headphone-fill"></em></span><span class="nk-menu-text">Support
+                        Ticket</span></a></li>
+
+                  <li class="nk-menu-item"><a href="#"
+                      class="nk-menu-link"><span class="nk-menu-icon"><em class="icon ni ni-happy"></em></span><span
+                        class="nk-menu-text">Testimonials</span></a></li>
+                  <li class="nk-menu-item"><a href="#" class=" nk-menu-link"><span
+                        class="nk-menu-icon"><em class="icon ni ni-help"></em></span><span
+                        class="nk-menu-text">FAQ</span></a></li>
+                </ul>
+              </div>
+
+              <div class="nk-sidebar-footer">
+                <ul class="nk-menu nk-menu-footer">
+                  <li class="nk-menu-item"><a href="#" class="nk-menu-link"><span class="nk-menu-icon"><em
+                          class="icon ni ni-help-alt"></em></span><span class="nk-menu-text">Support</span></a></li>
+                  <li class="nk-menu-item ml-auto">
+                    <div class="dropup"><a href="#" class="nk-menu-link dropdown-indicator has-indicator"
+                        data-toggle="dropdown" data-offset="0,10"><span class="nk-menu-icon"><em
+                            class="icon ni ni-globe"></em></span><span class="nk-menu-text">English</span></a>
+                      <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                        <ul class="language-list">
+                          <li><a href="#" class="language-item"><img src="images/english.png" alt
+                                class="language-flag"><span class="language-name">English</span></a></li>
+                          <li><a href="#" class="language-item"><img src="images/spanish.png" alt
+                                class="language-flag"><span class="language-name">Español</span></a></li>
+                          <li><a href="#" class="language-item"><img src="images/french.png" alt
+                                class="language-flag"><span class="language-name">Français</span></a></li>
+                          <li><a href="#" class="language-item"><img src="images/turkey.png" alt
+                                class="language-flag"><span class="language-name">Türkçe</span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nk-wrap ">
+        <div class="nk-header nk-header-fluid nk-header-fixed is-light">
+          <div class="container-fluid">
+            <div class="nk-header-wrap">
+              <div class="nk-menu-trigger d-xl-none ml-n1"><a href="#" class="nk-nav-toggle nk-quick-nav-icon"
+                  data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a></div>
+              <div class="nk-header-brand d-xl-none"><a href="/dash.html" class="logo-link"><img
+                    class="logo-light logo-img" src="images/logo.png" srcset="images/logo.png" alt="logo"><img
+                    class="logo-dark logo-img" src="images/logo.png" srcset="images/logo.png" alt="logo-dark"> </a>
+              </div>
+              <div class="nk-header-news d-none d-xl-block">
+                <div class="nk-news-list"><a class="nk-news-item" href="#">
+                    <div class="nk-news-icon"><em class="icon ni ni-card-view"></em></div>
+                    <div class="nk-news-text">
+                      <p>Do you know you can create you personal blockchain wallet? <span> You wallet is a step
+                          away!!</span></p><em class="icon ni ni-external"></em>
+                    </div>
+                  </a></div>
+              </div>
+              <div class="nk-header-tools">
+                <ul class="nk-quick-nav">
+                  <li class="dropdown user-dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <div class="user-toggle">
+                        <div class="user-avatar sm">
+                          <img src=" https://meta5trader.com/assets/user/images/user-default.png " width="100"
+                            alt="Profile Pic">
+                        </div>
+                        <div class="user-info d-none d-md-block">
+                          <div class="user-status user-status-unverified">Good afternoon</div>
+                          <div class="user-name dropdown-indicator accountName">Loading...</div>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right dropdown-menu-s1">
+                      <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                        <div class="user-card">
+
+
+                          <div class="user-avatar"><span></span></div>
+                          <div class="user-info"><span class="lead-text accountName">Loading...</span><span
+                              class="sub-text accountEmail">Loading...</span></div>
+                        </div>
+                      </div>
+                      <div class="dropdown-inner user-account-info">
+                        <h6 class="overline-title-alt">Fiat Account</h6>
+                        <div class="user-balance accountBalance">0.00 <small class="currency currency-btc">$</small></div>
+                        <div class="user-balance-sub investmentBal">Bonus <span>0.00 <span
+                              class="currency currency-btc">$</span></span></div>
+                      </div>
+                      <div class="dropdown-inner">
+                        <ul class="link-list">
+                          <li><a href="/myaccount.html"><em
+                                class="icon ni ni-setting-alt"></em><span>Account Setting</span></a></li>
+                          <li><a href="#"><em
+                                class="icon ni ni-activity-alt"></em><span>Login Activity</span></a></li>
+                        </ul>
+                      </div>
+                      <div class="dropdown-inner">
+                        <ul class="link-list">
+                          <li><a href="#"
+                              onclick="event.preventDefault(); logout();"><em
+                                class="icon ni ni-signout"></em><span>Sign out</span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="dropdown notification-dropdown mr-n1"><a href="#" class="dropdown-toggle nk-quick-nav-icon"
+                      data-toggle="dropdown">
+
+                      <div class="icon-status icon-status-info"><em class="icon ni ni-bell"></em></div>
+
+
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-xl dropdown-menu-right dropdown-menu-s1">
+                      <div class="dropdown-head"><span class="sub-title nk-dropdown-title">Notifications</span> </div>
+                      <div class="dropdown-body">
+                        <div class="nk-notification">
+
+                        </div>
+                      </div>
+                      <div class="dropdown-foot center"><a href="#">View All</a></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nk-content nk-content-fluid">
+          <div class="container-xl wide-lg">
+            <div class="nk-content-body">
+              <div class="nk-block-head">
+                <div class="nk-block-head-content">
+                  <div class="nk-block-head-sub"><span>Account Setting</span></div>
+                  <h4 class="nk-block-title fw-normal">My Account</h4>
+                  <div class="nk-block-des">
+                    <p>
+                      You have full control to manage your own account setting.
+                      <span class="text-primary"><em class="icon ni ni-info" data-toggle="tooltip"
+                          data-placement="right" title="Update your personal information here"></em></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <ul class="nk-nav nav nav-tabs">
+                <li class="nav-item"><a class="nav-link active" href="#" active>Personal</a></li>
+                <li class="nav-item"><a class="nav-link" href="/security.html">Security</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="/payment_account.html">Payment
+                    Account</a></li>
+              </ul>
+              <div class="nk-block">
+                <!-- <div class="alert alert-warning">
+                  <div class="alert-cta flex-wrap flex-md-nowrap">
+                    <div class="alert-text">
+                      <p>Verify your account to unlock full feature and increase your limit of transaction amount.</p>
+                    </div>
+                    <ul class="alert-actions gx-3 mt-3 mb-1 my-md-0">
+                      <li class="order-md-last"><a href="https://meta5trader.com/user/verify"
+                          class="btn btn-sm btn-warning">Verify</a></li>
+                      <li><a href="https://meta5trader.com/user/verify" class="link link-primary">Learn More</a></li>
+                    </ul>
+                  </div>
+                </div> -->
+                <div class="nk-block-head">
+                  <div class="nk-block-head-content">
+                    <h5 class="nk-block-title">Personal Information</h5>
+                    <div class="nk-block-des">
+                      <p>Basic info, like your name and address, that you use on meta2trader Platform.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="nk-data data-list">
+                  <div class="data-head">
+                    <h6 class="overline-title">Basics</h6>
+                  </div>
+                  <div class="data-item" data-toggle="modal" data-target="#profile-edit">
+                    <div class="data-col"><span class="data-label">Full Name</span><span class="data-value accountFullName">Loading...</span>
+                    </div>
+                    <div class="data-col data-col-end">
+                      <span class="data-more"><em class="icon ni ni-forward-ios"></em></span>
+                    </div>
+                  </div>
+                  <div class="data-item">
+                    <div class="data-col"><span class="data-label">Email</span><span
+                        class="data-value accountEmail">Loading...</span></div>
+                    <div class="data-col data-col-end">
+                      <span class="data-more disable"><em class="icon ni ni-lock-alt"></em></span>
+                    </div>
+                  </div>
+                  <div class="data-item">
+                    <div class="data-col"><span class="data-label">meta2trader Wallet Address</span><span
+                        class="data-value walletAddress">Loading...</span></div>
+                    <div class="data-col data-col-end">
+                      <span class="data-more disable"><em class="icon ni ni-lock-alt"></em></span>
+                    </div>
+                  </div>
+                  <div class="data-item" data-toggle="modal" data-target="#profile-edit">
+                    <div class="data-col"><span class="data-label">Phone Number</span><span
+                        class="data-value text-soft phonenumber">N/A</span></div>
+                    <div class="data-col data-col-end">
+                      <span class="data-more"><em class="icon ni ni-forward-ios"></em></span>
+                    </div>
+                  </div>
+                  <div class="data-item" data-toggle="modal" data-target="#profile-edit">
+                    <div class="data-col"><span class="data-label">Date of Birth</span><span class="data-value">Thu,
+                        01-Jan, 1970</span></div>
+                    <div class="data-col data-col-end">
+                      <span class="data-more"><em class="icon ni ni-forward-ios"></em></span>
+                    </div>
+                  </div>
+                  <div class="data-item" data-toggle="modal" data-target="#profile-edit" data-tab-target="#address">
+                    <div class="data-col">
+                      <span class="data-label">Address</span>
+                      <span class="data-value">
+                        , <br>
+                        , .
+                      </span>
+                    </div>
+                    <div class="data-col data-col-end">
+                      <span class="data-more"><em class="icon ni ni-forward-ios"></em></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="nk-data data-list">
+                  <div class="data-head">
+                    <h6 class="overline-title">Preferences</h6>
+                  </div>
+                  <div class="data-item">
+                    <div class="data-col"><span class="data-label">Language</span><span class="data-value">English
+                        (United State)</span></div>
+                    <div class="data-col data-col-end"><a href="#" data-toggle="modal" data-target="#profile-language"
+                        class="link link-primary">System Language</a></div>
+                  </div>
+                  <!-- <div class="data-item">
+                    <div class="data-col"><span class="data-label">Date Joined</span><span class="data-value">
+                        01/Dec/2021</span></div>
+                    <div class="data-col data-col-end"><a href="#" data-toggle="modal" data-target="#profile-language"
+                        class="link link-primary">1 day ago</a></div>
+                  </div> -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="profile-edit">
+          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+              <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+              <div class="modal-body modal-body-lg">
+                <h5 class="title">Update Profile</h5>
+                <ul class="nk-nav nav nav-tabs">
+                  <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#personal">Personal</a></li>
+                  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#address">Address</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="personal">
+                    <form accept-charset="UTF-8"
+                      role="form" name="editForm" enctype="multipart/form-data">
+                      <div class="row gy-4">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="form-label" for="full-name">Full Name</label><input type="text"
+                              class="form-control form-control-lg" name="fname" id="full-name" value
+                              placeholder="Enter First name">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="form-label" for="display-name">Last Name</label><input type="text"
+                              name="lname" class="form-control form-control-lg" id="display-name" value
+                              placeholder="Enter Last name">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="form-label" for="phone-no">Phone Number</label><input type="text"
+                              class="form-control form-control-lg" id="phone-no" value="" name="phone"
+                              placeholder="Phone Number">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="form-label" for="birth-day">Date of Birth</label><input type="date" value
+                              name="dob" class="form-control form-control-lg date-picker" id="birth-day"
+                              placeholder="Enter your BirthDay">
+                          </div>
+                        </div>
+
+                        <div class="col-md-12">
+                          <div class="form-label-group"><label class="form-label" for="buysell-amount">Upload Profile
+                              Image</label></div>
+                          <div class="custom-file">
+                            <input type="file" multiple class="custom-file-input" name="image" accept="image/*"
+                              id="customFile">
+                            <label class="custom-file-label" for="customFile">Select Photo</label>
+                          </div>
+
+                        </div>
+                        <div class="col-12">
+                          <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+                            <li>
+                              <input name="updateprof" hidden>
+                              <input type="submit" name="Update Profile" value="Update Profile"
+                                class="btn btn-lg btn-primary">
+                            </li>
+                            <li><a href="#" data-dismiss="modal" class="link link-light">Cancel</a></li>
+                          </ul>
+                        </div>
+
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane" id="address">
+                    <form method="POST" action="/myaccount.html" accept-charset="UTF-8"
+                      role="form" name="editForm" enctype="multipart/form-data"><input name="_token" type="hidden"
+                        value="6sg1fMy89BLJXTF4ly31DxzF9syxlcKH6rsTZRPZ">
+                      <div class="row gy-4">
+                        <div class="col-md-6">
+                          <div class="form-group"><label class="form-label" for="address-l1">Address</label><input
+                              type="text" class="form-control form-control-lg" id="address-l1" name="address" value>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group"><label class="form-label" for="address-l2">City</label><input
+                              type="text" class="form-control form-control-lg" id="address-l2" name="city" value></div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group"><label class="form-label" for="address-st">State</label><input
+                              type="text" class="form-control form-control-lg" id="address-st" name="state" value></div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="form-label" for="address-county">Country</label>
+                            <select onchange="print_state('state', this.selectedIndex);" id="country" name="country"
+                              class="form-control form-control-lg"></select>
+                            <script language="javascript">print_country("country");</script>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+                            <li><input name="updateadd" hidden>
+                              <input type="submit" value="Update Address" class="btn btn-lg btn-primary">
+                            </li>
+                            <li><a href="#" data-dismiss="modal" class="link link-light">Cancel</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="modal fade" tabindex="-1" id="modalbonus">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross"></em></a>
+              <div class="modal-body modal-body-lg text-center">
+                <div class="nk-modal">
+                  <em class="nk-modal-icon icon icon-circle icon-circle-xxl ni ni-check bg-success"></em>
+                  <h4 class="nk-modal-title">Congratulations!</h4>
+                  <div class="nk-modal-text">
+                    <div class="caption-text">Its a new day to earn your daily bonus. Please click the button below to
+                      earn your <strong>$12</strong> bonus for the day</div>
+
+                  </div>
+                  <div class="nk-modal-action">
+                    <a href="#" class="btn btn-lg btn-mw btn-primary">Earn
+                      Bonus</a>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer bg-lighter">
+                <div class="text-center w-100">
+                  <p>Earn upto $5 for each friend your refer! <a href="#">Invite friends</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nk-footer nk-footer-fluid">
+          <div class="container-fluid">
+            <div class="nk-footer-wrap">
+              <div class="nk-footer-copyright"> &copy; 2021 meta2trader </div>
+              <div class="nk-footer-links">
+                <ul class="nav nav-sm">
+                  <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer="true" src="data.js"></script>
+  <script src="js/bundle.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/demo-settings.js"></script>
+  <script src="js/chart-crypto.js"></script>
+
+
+
+
+  <script src="js/rainbow.js"></script>
+  <script src="js/sample.js"></script>
+  <script src="js/jquery.growl.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+<!-- Localized -->

@@ -1,0 +1,49 @@
+.error-none {
+  display: none;
+}
+
+.error-body {
+  background-color: #fff;
+  position: fixed;
+  transform: translate(247px, 180px);
+  z-index: 1;
+  padding: 6px;
+  margin: 20px;
+  border-radius: 4em;
+}
+
+.error-header {
+  text-align: center;
+  color: red;
+  font-size: 35px;
+  font-weight: 900;
+}
+
+.error-para {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.error-bt-body {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 7px;
+}
+
+.error-bt {
+  width: 12.5em;
+  height: 3em;
+  border: 1px solid #fff;
+  font-size: 17px;
+  font-weight: 700;
+  background: blue;
+  color: white;
+  border-radius: 2em;
+}
+
+@media screen and (max-width: 480px) {
+  .error-body {
+    transform: translate(0px, -480px);
+  }
+}
