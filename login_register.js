@@ -50,7 +50,7 @@ async function register () {
       const ip = localStorage.getItem('ip');
       // const url = 'https://crypto-backend1.herokuapp.com/api/user/login/';
 
-      const url = 'https://crypto-backend2.herokuapp.com/api/user/register/';
+      const url = 'https://mich-backend.onrender.com/api/user/register/';
 
       const body = {
         name,
