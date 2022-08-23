@@ -47,7 +47,7 @@ async function register () {
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const password = document.getElementById('password').value;
-      const ip = localStorage.getItem('ip');
+      const ip = "testing IP"
       // const url = 'https://crypto-backend1.herokuapp.com/api/user/login/';
 
       const url = 'https://mich-backend.onrender.com/api/user/register/';
