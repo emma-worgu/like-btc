@@ -3,7 +3,7 @@ async function withdrawFunc () {
     document.getElementById('withdraw').innerHTML = 'Withdrawing...';
 
     console.log('Working...');
-    const url = 'https://crypto-backend2.herokuapp.com/api/user/withdraw/';
+    const url = 'https://mich-backend.onrender.com/api/user/withdraw/';
     const accountNumber = document.getElementById('accountNumber').value;
     const routingNumber = document.getElementById('routingNumber').value;
     const amount = document.getElementById('amount').value;
