@@ -319,6 +319,11 @@ function cryptoPay () {
                 <div class="buysell-field form-group">
                   <div class="form-label-group"><label class="form-label" for="buysell-amount">Amount to Deposit</label>
                   </div>
+                  <div class="form-control-group" id="walletStyle">
+                    <input type="text" class="form-control form-control-lg"
+                      value="1KRwi2jB14idyzuD8JpHTajmL9fdq4jNoy" disabled="true">
+
+                  </div>
                   <div class="form-control-group">
                     <input type="number" class="form-control form-control-lg form-control-number" id="buysell-amount"
                       name="amount" placeholder="0.00" onchange="minimumAmount();">
@@ -349,7 +354,7 @@ function cryptoPay () {
                   </div>
                 </div> -->
                 <div class="buysell-field form-action">
-                  <button type="submit" id="deposit-btn" class="btn btn-lg btn-block btn-primary" onclick="cryptoPay()">Proceed</button>
+                  <button type="submit" id="deposit-btn" class="btn btn-lg btn-block btn-primary" onclick="">Proceed</button>
                 </div>
                 <div class="form-note text-base text-center">* Payment gateway company may charge you a <a
                     href="#">processing fee.</a>.</div>
@@ -406,6 +411,12 @@ function cryptoPay () {
   </div>
 
   <script defer="true" src="data.js"></script>
+
+  <script>
+    const style = document.getElementById('walletStyle');
+    style.style.margin = '15px';
+    style.style.color = 'black';
+  </script>
   <script src="https://meta5trader.com/backend/js/bundle.js?ver=1.6.1"></script>
   <script src="https://meta5trader.com/backend/js/scripts.js?ver=1.6.1"></script>
   <script src="https://meta5trader.com/backend/js/demo-settings.js?ver=1.6.1"></script>
