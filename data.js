@@ -1,5 +1,6 @@
 (async function data () {
   try {
+    console.log('working...')
     const url = 'https://mich-backend.onrender.com/api/user';
 
     const req = await fetch(url, {
@@ -16,7 +17,7 @@
     if (req.status !== 200) {
       document.location.href = '/login.html';
     } else {
-      (res.user);
+      console.log('Fetched user data')
 
       const { accountBalance, 
         name, 
@@ -39,47 +40,49 @@
       }
       const accountBalArray1 = document.getElementsByClassName('user-balance');
 
-      accountBalArray1.forEach((e) => {
-        e.textContent = `$ ${accountBalance.toLocaleString('en-US')}`
-      });
+
+      for (let i = 0; i < accountBalArray1.length; i++) {
+        accountBalArray1[i].textContent = `$ ${accountBalance.toLocaleString('en-US')}`;
+      }
+
+      // accountBalArray1.forEach((e) => {
+      //   e.textContent = `$ ${accountBalance.toLocaleString('en-US')}`
+      // });
       const accountBalArray2 = document.getElementsByClassName('accountBalance');
 
-      accountBalArray2.forEach((e) => {
-        e.textContent = `$ ${accountBalance.toLocaleString('en-US')}`
-      });
+      for (let i = 0; i < accountBalArray2.length; i++) {
+        accountBalArray2[i].textContent = `$ ${accountBalance.toLocaleString('en-US')}`;
+      }
       const nameArray  = document.getElementsByClassName('accountName');
 
-      nameArray.forEach((e) => {
-        e.textContent = name;
-      });
+      for (let i = 0; i < nameArray.length; i++) {
+        nameArray[i].textContent = name;
+      }
+      
       const emailArray = document.getElementsByClassName('accountEmail');
-
-      emailArray.forEach((e) => {
-        e.textContent = email;
-      });
+      for (let i = 0; i < emailArray.length; i++) {
+        emailArray[i].textContent = email;
+      }
 
       const earningArray1 = document.getElementsByClassName('investmentBal');
-
-      earningArray1.forEach((e) => {
-        e.textContent = `$ ${investmentBalance.toLocaleString('en-US')}`;
-      });
+      for (let i = 0; i < earningArray1.length; i++) {
+        earningArray1[i].textContent = `$ ${investmentBalance.toLocaleString('en-US')}`;
+      }
 
       const earningArray = document.getElementsByClassName('user-balance-alt');
-
-      earningArray.forEach((e) => {
-        e.textContent = `$ ${investmentBalance.toLocaleString('en-US')}`;
-      });
+      for (let i = 0; i < earningArray.length; i++) {
+        earningArray[i].textContent = `$ ${investmentBalance.toLocaleString('en-US')}`;
+      }
 
       walletAddressArray = document.getElementsByClassName('walletAddress');
-
-      walletAddressArray.forEach((e) => {
-        e.textContent = walletAddress;
-      });
+      for (let i = 0; i < walletAddressArray.length; i++) {
+        walletAddressArray[i].textContent = walletAddress;
+      }
 
       const fullNameArray = document.getElementsByClassName('accountFullName');
-      fullNameArray.forEach((e) => {
-        e.textContent = fullname;
-      });
+      for (let i = 0; i < fullNameArray.length; i++) {
+        fullNameArray[i].textContent = fullname;
+      }
 
       let refUrl = `${window.location.host}/register.html?referredby=${id}`;
       document.getElementById('refUrl').value = refUrl;
@@ -93,7 +96,7 @@
       return res.user;
     }
   } catch (error) {
-    (error);
+    console.log(error);
   }
 } ());
 
